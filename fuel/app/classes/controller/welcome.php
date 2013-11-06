@@ -1,4 +1,7 @@
 <?php
+use Fuel\Core\Request;
+use Fuel\Core\Controller_Rest;
+use Fuel\Core\Request_Curl;
 /**
  * Fuel is a fast, lightweight, community driven PHP5 framework.
  *
@@ -19,7 +22,7 @@
  * @package  app
  * @extends  Controller
  */
-class Controller_Welcome extends Controller
+class Controller_Welcome extends Controller_Rest
 {
 
 	/**
@@ -30,7 +33,12 @@ class Controller_Welcome extends Controller
 	 */
 	public function action_index()
 	{
-		return Response::forge(View::forge('welcome/index'));
+		
+		$curl = Request::forge('http://moviesocial.local/public/user/follow', 'curl');
+		$method = $curl->execute();
+		
+		echo $method->response();
+		//return Response::forge(View::forge('welcome/index'));
 	}
 
 	/**
@@ -42,6 +50,7 @@ class Controller_Welcome extends Controller
 	 */
 	public function action_hello()
 	{
+		
 		return Response::forge(ViewModel::forge('welcome/hello'));
 	}
 
