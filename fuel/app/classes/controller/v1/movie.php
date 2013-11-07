@@ -1,6 +1,6 @@
 <?php
 use Fuel\Core\Controller_Rest;
-class Controller_Movie extends Controller_Rest{
+class Controller_V1_Movie extends Controller_Rest{
 	protected $format = 'json';
 	
 	/***

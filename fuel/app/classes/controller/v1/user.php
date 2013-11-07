@@ -1,7 +1,7 @@
 <?php
 
 use Fuel\Core\Controller_Rest;
-class Controller_User extends Controller_Rest{
+class Controller_V1_User extends Controller_Rest{
 	protected $format = 'json';
 	public function before()
 	{
@@ -39,17 +39,7 @@ class Controller_User extends Controller_Rest{
 		return $this->response($returnData,200);
 	}
 	
-	/**
-	 * Uri: /setting/push
-	 * Receive data status(on/of)
-	 * Return true/false
-	 * Status 200
-	 * */
-	public function post_settingPush(){
-		
-		$returnData = array('status'=>true);
-		return $this->response($returnData,200);
-	}
+	
 	/**
 	 * Uri: user/[user_id]/follow
 	 * Description: follow friends by Id
@@ -57,8 +47,8 @@ class Controller_User extends Controller_Rest{
 	 * Status 200
 	 * */
 	public function post_follow(){
-		
-		return $this->response(array(),200);
+		$user_id = $this->param('user_id');
+		return $this->response(array($user_id),200);
 	}
 	/**
 	 * Uri: user/[user_id]/unfollow
@@ -76,7 +66,7 @@ class Controller_User extends Controller_Rest{
 	 * Params: Name, profile, pic(multi-part attachment)
 	 * Return N/a
 	 * */
-	public function post_meProfile(){
+	public function post_profile(){
 		
 		return $this->response(array(),200);
 	}

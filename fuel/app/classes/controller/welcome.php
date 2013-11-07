@@ -34,9 +34,9 @@ class Controller_Welcome extends Controller_Rest
 	public function action_index()
 	{
 		
-		$curl = Request::forge('http://moviesocial.local/public/user/follow', 'curl');
+		$curl = Request::forge('http://moviesocial.local/public/v1/movie/1/comment', 'curl');
+		$curl->set_method('get');
 		$method = $curl->execute();
-		
 		echo $method->response();
 		//return Response::forge(View::forge('welcome/index'));
 	}
