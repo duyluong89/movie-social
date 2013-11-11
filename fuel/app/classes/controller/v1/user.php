@@ -142,4 +142,66 @@ class Controller_V1_User extends Controller_Rest{
 		);
 		return $this->response($returnData,200);
 	}
+	
+	/****
+	 * Uri: /user/search
+	 * Desc: search user
+	 * Params: query
+	 * Return: array user
+	 * */
+	public function get_search(){
+		$returnData = array(
+				'listUser'=>array(
+						array(
+								'user_id'=>1,
+								'name'=>'',
+								'profile'=>'',
+								'pic'=>''
+						),
+						array(
+								'user_id'=>2,
+								'name'=>'',
+								'profile'=>'',
+								'pic'=>''
+						),
+			)
+		);
+		return $this->response($returnData,200);
+	}
+	
+	/*******
+	 * Uri: me/friends/facebook
+	 * Desc: Seraching users by FB connection
+	 * params: fb_id, fb_token
+	 * Return: User
+	 * ***/
+	public function get_facebook(){
+		$returnData = array('user1');
+		return $this->response($returnData,200);
+	}
+	
+	/*******
+	 * Uri: me/friends/twitter
+	* Desc: Seraching users by FB connection
+	* params: tw_id, tw_token
+	* Return: User
+	* ***/
+	public function get_twitter(){
+		$returnData = array('user1');
+		return $this->response($returnData,200);
+	}
+	
+	/*****
+	 * Uri: user/hot
+	* Desc: Hot user Algorithm needed
+	* Return: array user hot
+	*
+	* **/
+	public function get_hot(){
+		$returnData = array('userhot');
+	
+		return $this->response($returnData,200);
+	}
+	
+	
 }

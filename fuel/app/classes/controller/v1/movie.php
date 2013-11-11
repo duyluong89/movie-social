@@ -94,21 +94,47 @@ class Controller_V1_Movie extends Controller_Rest{
 	public function get_comment(){
 		$returnData = array(
 				'listComment'=>array(array(
-						'id'=>1,
-						'pic'=>'',
-						'created_at'=>'',
-						'comment'=>''		
+							'id'=>1,
+							'pic'=>'',
+							'created_at'=>'',
+							'comment'=>''		
 						),
 						array(
-								'id'=>2,
-								'pic'=>'',
-								'created_at'=>'',
-								'comment'=>''
+							'id'=>2,
+							'pic'=>'',
+							'created_at'=>'',
+							'comment'=>''
 						)
 						
 				)
 		);
 	return $this->response($returnData,200);	
 	}
+	
+	/***
+	 * Uri: movie/search
+	 * Desc: get movie by query
+	 * */
+	public function get_search(){
+		return $this->response(array(), 200);
+	}
+	
+	/*****
+	 * Uri: movie/hot
+	 * Desc: Hot moviesAlgorithm needed
+	 * Return: array movie hot
+	 * 
+	 * **/
+	public function get_hot(){
+		$returnData = array('movie hot');
+		
+		return $this->response($returnData,200);
+	}
+	
+	
+	public function post_notify(){
+		
+	}
+	
 	
 }

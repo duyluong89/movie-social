@@ -25,5 +25,13 @@ return array(
 	'v1/timeline'=>'v1/timeline/timeline',
 	'v1/timeline/:tag'=>'v1/timeline/tag',
 	'v1/movie/search'	=>'v1/movie/search',
+	'v1/user/search'	=>'v1/user/search',
+	'v1/me/friends/facebook' =>'v1/user/facebook',
+	'v1/me/friends/twitter' =>'v1/user/twitter',
+	'v1/movie/hot'	=>'v1/movie/hot',
+	'v1/user/hot'	=>'v1/user/hot',
+	'v1/notification'	=>'v1/notification/new',
+	'v1/movie/:movie_id/notify'	=>'v1/notification/movie',
+	'v1/user/:user_id/notify'	=>'v1/notification/user',
 	
 );
